@@ -13,9 +13,17 @@ $(function () {
     });
 
     $('.gnb>ul>li>a').on('click', function (e) {
-        e.preventDefault();
-        $(this).next().slideDown();
+        if ($('.gnb').hasClass('on')) {
+            e.preventDefault();
+            $('.smenu').stop().slideUp();
+            $(this).next().stop().slideToggle();
+        }
 
+    });
+
+    $(window).on('resize', function () {
+        $('.gnb').removeClass('on');
+        $('.smenu').removeAttr('style')
     })
 
 
