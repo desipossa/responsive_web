@@ -1,0 +1,22 @@
+$(function () {
+    $('.main_slider').slick({
+        arrows: false,
+        autoplay: true,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        fade: true,
+    });
+
+
+    $('.mbtn').on('click', function () {
+        $('.gnb').toggleClass('on')
+    });
+
+    $('.gnb>ul>li>a').on('click', function (e) {
+        e.preventDefault();
+        $(this).next().slideDown();
+
+    })
+
+
+})
